@@ -1,24 +1,30 @@
-import useStore from "../../store";
 import { useState } from "react";
 
-const AddCar: React.FC = () => {
-  const { addCar } = useStore();
-  const [newCar, setNewCar] = useState({ brand: "", model: "", year: "" });
+interface AddCarProps {
+  addCar: (newCar: {
+    brand: string;
+    model: string;
+    year: number;
+  }) => Promise<void>;
+}
+
+const AddCar = ({ addCar }: AddCarProps) => {
+  const [newCar, setNewCar] = useState({ brand: "", model: "", year: 0 });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setNewCar((prev) => ({
       ...prev,
-      [name]: name === "rok" ? Number(value) : value,
+      [name]: name === "year" ? Number(value) : value, // Convert "year" to a number
     }));
   };
 
   const handleAddCar = async () => {
     if (newCar.brand && newCar.model && newCar.year) {
-      await addCar(newCar); // Wywołujemy funkcję dodawania z store
-      setNewCar({ brand: "", model: "", year: "" }); // Resetujemy formularz
+      await addCar(newCar); // Call the addCar function passed via props
+      setNewCar({ brand: "", model: "", year: 0 }); // Reset form
     } else {
-      alert("Proszę wypełnić wszystkie pola!");
+      alert("Proszę wypełnić wszystkie pola!"); // Alert for empty fields
     }
   };
 
@@ -26,25 +32,30 @@ const AddCar: React.FC = () => {
     <div>
       <h2>Dodaj Nowy Samochód</h2>
       <input
-        name="marka"
+        name="brand"
         placeholder="Marka"
+        className="input input-bordered"
         value={newCar.brand}
         onChange={handleInputChange}
       />
       <input
         name="model"
         placeholder="Model"
+        className="input input-bordered"
         value={newCar.model}
         onChange={handleInputChange}
       />
       <input
-        name="rok"
+        name="year"
         type="number"
+        className="input input-bordered"
         placeholder="Rok"
         value={newCar.year}
         onChange={handleInputChange}
       />
-      <button onClick={handleAddCar}>Dodaj</button>
+      <button onClick={handleAddCar} className="btn btn-primary">
+        Dodaj
+      </button>
     </div>
   );
 };
