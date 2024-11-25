@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">Carhub frontend</h4>
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech/framework used 🔧
 
-## Expanding the ESLint configuration
+| Tech                                                    | Description                              |
+| ------------------------------------------------------- | ---------------------------------------- |
+| [React](https://react.dev/)                           | To create small components for better use of the project   |
+| [Typescript](https://www.typescriptlang.org/)                           | For type safe responses from the api    |
+| [Tailwind CSS](https://tailwindcss.com)                           | Styling the application   |
+| [Daisy ui](https://daisyui.com/)                           | Ready to use components for the application    |
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation 💾
+For the instalation of the project see `package.json` file for packages needed to install the dependecies. To install type `npm install` inside the project.
 
-- Configure the top-level `parserOptions` property like this:
+## Available scripts
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+| Command                   | Description                   |
+| ------------------------- | ----------------------------- |
+| `npm run dev`           | Open local server             |
+| `npm run build`           | Create optimized build        |
+| `npm run start`           | Start optimized build        |
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Backend 
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Live 📍
+Here you can check live version of the project: [Click here](https://carhub-frontend.netlify.app/)
