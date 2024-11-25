@@ -25,5 +25,7 @@ For the instalation of the project see `package.json` file for packages needed t
 
 ## Backend 
 
+For the backend for the application check this repository: [Click here](https://github.com/mcwojdzinski/carhub-backend)
+
 ## Live 📍
 Here you can check live version of the project: [Click here](https://carhub-frontend.netlify.app/)
