@@ -5,7 +5,7 @@ import AddCar from "./components/AddCar/AddCar";
 import { useEffect, useState } from "react";
 import { Car } from "./interface/Car";
 
-axios.defaults.baseURL = "http://localhost:3000/api/cars";
+axios.defaults.baseURL = "https://carhub-backend-84pr.onrender.com/api/cars";
 
 function App() {
   const [cars, setCars] = useState<Car[]>([]);
